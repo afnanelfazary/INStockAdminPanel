@@ -1,0 +1,134 @@
+query products {
+  products(first: 30, reverse: true) {
+    edges {
+      node {
+        id
+        title
+        bodyHtml
+        descriptionHtml
+        productType
+        variants(first: 30) {
+          edges {
+            node {
+              price
+              title
+            }
+          }
+        }
+        status
+        vendor
+  
+      }
+    }
+  }
+}
+ query images{
+   products(first: 30, reverse: true) {
+    edges {
+      node {
+           id
+            
+           images(first: 30) {
+          edges {
+            node {
+              id
+              src
+              url
+            }
+            cursor
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+mutation productUpdate($input: ProductInput!) {
+  productUpdate(input: $input) {
+    product {
+      id
+      productType
+      tags
+      title
+      bodyHtml
+      descriptionHtml
+      vendor
+       status
+  variants(first: 30) {
+          edges {
+            node {
+              price
+              title
+            }
+          }
+        }
+        images(first:30)
+        {
+        edges
+        {
+        node
+        {
+        src
+}
+}
+}
+}
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+ 
+
+
+mutation productCreate($input: ProductInput!) {
+  productCreate(input: $input ) {
+    product {
+      id
+      productType
+      tags
+      title
+      bodyHtml
+      vendor
+       status
+      descriptionHtml
+  variants(first: 30) {
+          edges {
+            node {
+              price
+              title
+            }
+          }
+        }
+        images(first:30)
+        {
+        edges
+        {
+        node
+        {
+        src
+}
+}
+}
+}
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+mutation productDelete($input: ProductDeleteInput!) {
+  productDelete(input: $input) {
+    deletedProductId
+   
+    userErrors {
+      field
+      message
+    
+  }
+}}

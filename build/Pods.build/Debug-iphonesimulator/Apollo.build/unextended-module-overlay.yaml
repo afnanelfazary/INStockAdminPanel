@@ -1,0 +1,14 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Debug-iphonesimulator/Apollo/Apollo.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/unextended-module.modulemap",
+    }]
+  }]
+}

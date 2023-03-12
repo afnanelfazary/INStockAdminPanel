@@ -1,0 +1,90 @@
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/LegacyCacheWriteInterceptor.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheWriteInterceptor.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheWriteInterceptor.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheWriteInterceptor.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheWriteInterceptor.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/JSONStandardTypeConversions.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONStandardTypeConversions.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONStandardTypeConversions.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONStandardTypeConversions.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONStandardTypeConversions.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/HTTPRequest.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPRequest.o"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPRequest.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPRequest.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPRequest.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/JSON.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSON.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSON.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSON.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSON.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/InMemoryNormalizedCache.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InMemoryNormalizedCache.o"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InMemoryNormalizedCache.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InMemoryNormalizedCache.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InMemoryNormalizedCache.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/HTTPResponse.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPResponse.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPResponse.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPResponse.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPResponse.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GroupedSequence.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GroupedSequence.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GroupedSequence.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GroupedSequence.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GroupedSequence.d"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLSelectionSetMapper.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSetMapper.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSetMapper.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSetMapper.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSetMapper.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/MaxRetryInterceptor.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MaxRetryInterceptor.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MaxRetryInterceptor.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MaxRetryInterceptor.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MaxRetryInterceptor.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/JSONSerialization+Sorting.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerialization+Sorting.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerialization+Sorting.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerialization+Sorting.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerialization+Sorting.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/LegacyCacheReadInterceptor.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheReadInterceptor.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheReadInterceptor.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheReadInterceptor.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyCacheReadInterceptor.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/MultipartFormData.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MultipartFormData.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MultipartFormData.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MultipartFormData.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/MultipartFormData.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/Matchable.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/Matchable.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/Matchable.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/Matchable.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/Matchable.d"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/JSONRequest.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONRequest.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONRequest.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONRequest.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONRequest.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/InterceptorProvider.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InterceptorProvider.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InterceptorProvider.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InterceptorProvider.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/InterceptorProvider.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/JSONSerializationFormat.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerializationFormat.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerializationFormat.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerializationFormat.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/JSONSerializationFormat.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/LegacyParsingInterceptor.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyParsingInterceptor.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyParsingInterceptor.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyParsingInterceptor.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/LegacyParsingInterceptor.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/HTTPURLResponse+Helpers.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPURLResponse+Helpers.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPURLResponse+Helpers.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPURLResponse+Helpers.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/HTTPURLResponse+Helpers.swiftdeps"

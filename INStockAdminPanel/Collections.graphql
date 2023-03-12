@@ -1,0 +1,76 @@
+query smartCollection {
+  collections(query: "collection_type:smart_collections", first: 10) {
+    edges {
+      node {
+        id
+        title
+        updatedAt
+        handle
+        ruleSet {
+          rules {
+            relation
+            column
+            condition
+          }
+        }
+        image {
+          id
+          src
+        }
+      }
+    }
+  }
+}
+
+ 
+mutation CollectionCreate($input: CollectionInput!){
+  collectionCreate(input: $input) {
+    collection {
+      image {
+        src
+      }
+      id
+      handle
+      ruleSet {
+        rules {
+          condition
+          relation
+        }
+      }
+      title
+    }
+  }
+}
+mutation collectionUpdate($input: CollectionInput!) {
+  collectionUpdate(input: $input) {
+    collection {
+          id
+       image {
+        src
+      }
+      handle
+      ruleSet {
+        rules {
+          condition
+          relation
+        }
+      }
+      title
+     }
+   
+    userErrors {
+      field
+      message
+    }
+  }
+}
+mutation collectionDelete($input: CollectionDeleteInput!) {
+  collectionDelete(input: $input) {
+    deletedCollectionId
+   
+    userErrors {
+      field
+      message
+    }
+  }
+}

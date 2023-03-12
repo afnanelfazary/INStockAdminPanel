@@ -1,0 +1,90 @@
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLQueryWatcher.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLQueryWatcher.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLQueryWatcher.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLQueryWatcher.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLQueryWatcher.d"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLDependencyTracker.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLDependencyTracker.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLDependencyTracker.o"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLDependencyTracker.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLDependencyTracker.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLResult.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResult.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResult.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResult.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResult.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLInputValue.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLInputValue.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLInputValue.dia"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLInputValue.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLInputValue.swiftdeps"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLOperation.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOperation.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOperation.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOperation.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOperation.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLHTTPMethod.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPMethod.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPMethod.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPMethod.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPMethod.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLExecutor.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLExecutor.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLExecutor.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLExecutor.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLExecutor.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLError.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLError.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLError.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLError.o"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLError.d"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLHTTPRequestError.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPRequestError.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPRequestError.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPRequestError.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLHTTPRequestError.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/ApolloCore/GraphQLOptional.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOptional.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOptional.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOptional.o"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLOptional.d"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLResponse.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponse.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponse.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponse.o"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponse.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLFile.swift":
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLFile.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLFile.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLFile.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLFile.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/FlexibleDecoder.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/FlexibleDecoder.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/FlexibleDecoder.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/FlexibleDecoder.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/FlexibleDecoder.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLGETTransformer.swift":
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLGETTransformer.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLGETTransformer.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLGETTransformer.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLGETTransformer.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLResultAccumulator.swift":
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultAccumulator.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultAccumulator.swiftdeps"
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultAccumulator.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultAccumulator.dia"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLSelectionSet.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSet.d"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSet.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSet.dia"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLSelectionSet.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLResponseGenerator.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponseGenerator.d"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponseGenerator.dia"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponseGenerator.swiftdeps"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResponseGenerator.o"
+"/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/Pods/Apollo/Sources/Apollo/GraphQLResultNormalizer.swift":
+  dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultNormalizer.d"
+  object: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultNormalizer.o"
+  swift-dependencies: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultNormalizer.swiftdeps"
+  diagnostics: "/Users/afnan/Documents/ITI/IOS/IOS-Swift-Projects/INStockAdminPanel/build/Pods.build/Debug-iphonesimulator/Apollo.build/Objects-normal/x86_64/GraphQLResultNormalizer.dia"

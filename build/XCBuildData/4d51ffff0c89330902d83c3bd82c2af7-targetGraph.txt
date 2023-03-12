@@ -1,0 +1,19 @@
+Target dependency graph (7 targets)
+Apollo in Pods, no dependencies
+Pods-INStockAdminPanel in Pods, depends on:
+Apollo in Pods (explicit)
+INStockAdminPanel in INStockAdminPanel, depends on:
+Pods-INStockAdminPanel in Pods (implicit dependency via file 'Pods_INStockAdminPanel.framework' in build phase 'Link Binary')
+Apollo in Pods (implicit dependency via options '-framework Apollo' in build setting 'OTHER_LDFLAGS')
+Pods-INStockAdminPanelTests in Pods, depends on:
+Pods-INStockAdminPanel in Pods (explicit)
+INStockAdminPanelTests in INStockAdminPanel, depends on:
+INStockAdminPanel in INStockAdminPanel (explicit)
+Pods-INStockAdminPanelTests in Pods (implicit dependency via file 'Pods_INStockAdminPanelTests.framework' in build phase 'Link Binary')
+Apollo in Pods (implicit dependency via options '-framework Apollo' in build setting 'OTHER_LDFLAGS')
+Pods-INStockAdminPanel-INStockAdminPanelUITests in Pods, depends on:
+Apollo in Pods (explicit)
+INStockAdminPanelUITests in INStockAdminPanel, depends on:
+INStockAdminPanel in INStockAdminPanel (explicit)
+Pods-INStockAdminPanel-INStockAdminPanelUITests in Pods (implicit dependency via file 'Pods_INStockAdminPanel_INStockAdminPanelUITests.framework' in build phase 'Link Binary')
+Apollo in Pods (implicit dependency via options '-framework Apollo' in build setting 'OTHER_LDFLAGS')

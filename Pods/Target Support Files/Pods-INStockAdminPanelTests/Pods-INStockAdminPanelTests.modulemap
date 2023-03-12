@@ -1,0 +1,6 @@
+framework module Pods_INStockAdminPanelTests {
+  umbrella header "Pods-INStockAdminPanelTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,10 @@
+framework module Apollo {
+  umbrella header "Apollo-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module Apollo.__Swift {
+  exclude header "Apollo-Swift.h"
+}
