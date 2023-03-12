@@ -33,12 +33,7 @@ class ProductDetailsViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-       // let collectionId :String = "437836251413"
-        //GraphQLID = String (collectionViewModel.result[indexPath.row].id!)
-     //   coll.deleteCollection(collectionId: "437836251413" )
-        //pup up Menu
         getBrandMenu()
-        
         productDetailsViewModel.getProductDetails()
         productDetailsViewModel.bindResultToProductView = {[weak self] in
             DispatchQueue.main.async{
@@ -56,72 +51,83 @@ class ProductDetailsViewController: UIViewController {
     @IBAction func saveBtn(_ sender: Any) {
         getBrandMenu()
         
-        if flagOperation == "Add"
+        if  (productNameTF.text == "") || (productImageTF.text == "") || (productDescriptionTF.text == "") || (productPriceTF.text == "")
         {
-            let alert = UIAlertController(title:"Add Product", message: "Do You Want to Add New Product ?", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
-                
-                
-                //create product
-                productDetailsViewModel.productTitleInput =   productNameTF.text!
-                productDetailsViewModel.productTypeInput =  productTypeStr!
-                productDetailsViewModel.productBrand =  productBrandStr!
-                productDetailsViewModel.productDescription =  productDescriptionTF.text!
-                productDetailsViewModel.productPrice =  productPriceTF.text!
-                productDetailsViewModel.productImg =  productImageTF.text!
-                
-                productDetailsViewModel.createProduct()
-                self.navigationController?.popToRootViewController(animated: true)
-                
-            }))
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
+            let alert = UIAlertController(title:"Warning!!!", message: "Please Fill valid Data ", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] UIAlertAction in
                 
                 dismiss(animated: true)
-                self.navigationController?.popToRootViewController(animated: true)
-            }))
-            
+             }))
             self.present(alert, animated: true, completion: nil)
-            
-            
+
         }
-        else if flagOperation == "Update"
-        {
-            let alert = UIAlertController(title:"Update Product", message: "Do You Want to Update this Product ?", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+        else{
+            if flagOperation == "Add"
+            {
+                let alert = UIAlertController(title:"Add Product", message: "Do You Want to Add New Product ?", preferredStyle: .alert)
                 
-                //Update product
+                alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+                    
+                    
+                    //create product
+                    productDetailsViewModel.productTitleInput =   productNameTF.text!
+                    productDetailsViewModel.productTypeInput =  productTypeStr!
+                    productDetailsViewModel.productBrand =  productBrandStr!
+                    productDetailsViewModel.productDescription =  productDescriptionTF.text!
+                    productDetailsViewModel.productPrice =  productPriceTF.text!
+                    productDetailsViewModel.productImg =  productImageTF.text!
+                    
+                    productDetailsViewModel.createProduct()
+                    self.navigationController?.popToRootViewController(animated: true)
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
+                    
+                    dismiss(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
+                }))
                 
-                print (flagOperation)
-                productDetailsViewModel.productID = productIDStr
+                self.present(alert, animated: true, completion: nil)
                 
-                productDetailsViewModel.productTitle =   productNameTF.text!
-                productDetailsViewModel.productType =  productTypeStr!
-                productDetailsViewModel.productBrand =  productBrandStr!
-                productDetailsViewModel.productDescription =  productDescriptionTF.text!
-                productDetailsViewModel.productPrice =  productPriceTF.text!
-                productDetailsViewModel.productImg =  productImageTF.text!
-                productDetailsViewModel.updateProduct()
-                self.navigationController?.popToRootViewController(animated: true)
-            }))
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
                 
-                dismiss(animated: true)
-                self.navigationController?.popToRootViewController(animated: true)
-            }))
-            
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }
-        productDetailsViewModel.bindResultToProductView = {[weak self] in
-            DispatchQueue.main.async{
             }
+            else if flagOperation == "Update"
+            {
+                let alert = UIAlertController(title:"Update Product", message: "Do You Want to Update this Product ?", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+                    
+                    //Update product
+                    
+                    print (flagOperation)
+                    productDetailsViewModel.productID = productIDStr
+                    
+                    productDetailsViewModel.productTitle =   productNameTF.text!
+                    productDetailsViewModel.productType =  productTypeStr!
+                    productDetailsViewModel.productBrand =  productBrandStr!
+                    productDetailsViewModel.productDescription =  productDescriptionTF.text!
+                    productDetailsViewModel.productPrice =  productPriceTF.text!
+                    productDetailsViewModel.productImg =  productImageTF.text!
+                    productDetailsViewModel.updateProduct()
+                    self.navigationController?.popToRootViewController(animated: true)
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
+                    
+                    dismiss(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }
+            productDetailsViewModel.bindResultToProductView = {[weak self] in
+                DispatchQueue.main.async{
+                }
+            }
+            
         }
-        
     }
-    
     
     //Pull Up Menu
     func getBrandMenu()

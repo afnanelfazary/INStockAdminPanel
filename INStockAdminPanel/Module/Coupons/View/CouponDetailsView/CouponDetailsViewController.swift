@@ -8,7 +8,7 @@
 import UIKit
 
 class CouponDetailsViewController: UIViewController {
-
+    
     
     @IBOutlet weak var couponTitleTF: UITextField!
     
@@ -21,15 +21,26 @@ class CouponDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-
+    
     
     
     
     @IBAction func saveCouponTF(_ sender: Any) {
-        
-        
+        if  (couponTitleTF.text == "") || (couponDiscountTF.text == "")  
+        {
+            let alert = UIAlertController(title:"Warning!!!", message: "Please Fill valid Data ", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] UIAlertAction in
+                
+                dismiss(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+        }
+        else{
+            
+        }
     }
 }

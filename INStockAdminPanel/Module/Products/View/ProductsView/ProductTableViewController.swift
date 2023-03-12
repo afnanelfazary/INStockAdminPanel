@@ -19,25 +19,21 @@ class ProductTableViewController: UITableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-        tableView.reloadData()
-
         fetchAPI()
-        tableView.reloadData()
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        fetchAPI()
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-
+        fetchAPI()
+        
     }
     func fetchAPI()
     {
         tableView.reloadData()
-
+        
         ProductViewModel.delegate = self
         ProductViewModel.fetchProducts()
     }
@@ -67,20 +63,20 @@ class ProductTableViewController: UITableViewController
         cell.productTypeLabel.text = ProductViewModel.productsList.first?.edges[indexPath.row].node.productType
         cell.productPriceLabel.text = ProductViewModel.productsList.first?.edges[indexPath.row].node.variants.edges.first?.node.price
         let productImageUrl = URL( string: ProductViewModel.imagesList.first?.edges[indexPath.row].node.images.edges[0].node.src ??  "1")
-        let processor = RoundCornerImageProcessor(cornerRadius: 60)
-        // if (productImageUrl != nil)
-        //  {
-        cell.productImage.kf.setImage(with: productImageUrl, placeholder: UIImage(named: "1"),options: [
-            .processor(processor),
-            .scaleFactor(UIScreen.main.scale),
-            .transition(.fade(1)),
-            .cacheOriginalImage
-        ], progressBlock: nil, completionHandler: nil)
-        
-        //    }
-        //    else{
-        //         item.productImage.image = UIImage(named: "1")
-        //   }
+        let processor = RoundCornerImageProcessor(cornerRadius: 20)
+        if (productImageUrl != nil)
+        {
+            cell.productImage.kf.setImage(with: productImageUrl, placeholder: UIImage(named: "1"),options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ], progressBlock: nil, completionHandler: nil)
+            
+        }
+        else{
+            cell.productImage.image = UIImage(named: "1")
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -103,9 +99,9 @@ class ProductTableViewController: UITableViewController
         let alert = UIAlertController(title:"Delete", message: "Are You Sure ?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
-           var productId =  ProductViewModel.productsList.first?.edges[indexPath.row].node.id
+            var productId =  ProductViewModel.productsList.first?.edges[indexPath.row].node.id
             productDetailsViewModel.deleteProduct(productId: productId ?? "")
-             self.tableView.reloadData()
+            self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
             dismiss(animated: true)
@@ -122,13 +118,9 @@ class ProductTableViewController: UITableViewController
     
     
     @IBAction func addProductBtn(_ sender: Any)
-    {
-        let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+    {let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
         //Flag operation is Add
         productDetailsVC.flagOperation = "Add"
-        //   productDetails.productNameTF.text = ""
-        //  productDetails.productPriceTF.text = ""
-        // productDetails.productDescriptionTF.text = ""
         self.navigationController?.pushViewController(productDetailsVC, animated: true)
         
     }
