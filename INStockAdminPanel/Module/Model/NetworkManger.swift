@@ -10,7 +10,7 @@ import Alamofire
 
 protocol NetworkMangerProtocol {
     static func fetchData<T : Decodable>( apiLink : String ,complitionHandler: @escaping (T?) -> Void)
- }
+}
 
 class NetworkManger : NetworkMangerProtocol {
     
@@ -19,7 +19,7 @@ class NetworkManger : NetworkMangerProtocol {
     
     
     static func fetchData<T : Decodable>(apiLink : String , complitionHandler: @escaping (T?) -> Void){
-
+        
         AF.request(apiLink).response{
             response in
             if let data = response.data {
@@ -30,11 +30,11 @@ class NetworkManger : NetworkMangerProtocol {
                 catch{
                     complitionHandler(nil)
                 }
-            } 
+            }
         }
-
+        
     }
-     
+    
 }
 
 

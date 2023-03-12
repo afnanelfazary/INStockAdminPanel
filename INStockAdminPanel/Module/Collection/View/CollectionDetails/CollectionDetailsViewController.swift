@@ -57,7 +57,7 @@ class CollectionDetailsViewController: UIViewController {
                 dismiss(animated: true)
             }))
             self.present(alert, animated: true, completion: nil)
-
+            
         }
         else{
             if flagOperation == "Add"

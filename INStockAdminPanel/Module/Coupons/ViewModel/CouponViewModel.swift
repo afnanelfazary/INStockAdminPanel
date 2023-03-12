@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Apollo
 protocol couponsViewModelDelegate : AnyObject {
     
     func  didReceivedData()
@@ -15,9 +15,9 @@ protocol couponsViewModelDelegate : AnyObject {
 }
 class CouponViewModel
 {
- 
+    
     var couponsList = [CouponsQuery.Data.CodeDiscountNode]()
-     weak var delegate :couponsViewModelDelegate?
+    weak var delegate :couponsViewModelDelegate?
     
     // READ DATA
     func fetchCoupons()
@@ -30,7 +30,6 @@ class CouponViewModel
             [weak self] result in
             switch result {
             case .success(let graphQLResult):
-                //  debugPrint("graphResult: \(graphQLResult)")
                 if let errors = graphQLResult.errors{
                     let errormessage = errors.map{$0.localizedDescription}.joined(separator:"\n")
                     self?.delegate?.didFail(errorMessage: errormessage)
@@ -48,5 +47,5 @@ class CouponViewModel
         }
         
     }}
-    
+
 

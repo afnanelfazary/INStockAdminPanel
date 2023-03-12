@@ -174,10 +174,10 @@ class ProductDetailsViewModel
     //Delete Product
     func deleteProduct(productId:GraphQLID)
     {
-         let apolloNetworkHelper = ApolloNetworkHelper.shared
+        let apolloNetworkHelper = ApolloNetworkHelper.shared
         apolloNetworkHelper.graphQlType = .products
-         apolloNetworkHelper.appolloClient.perform(mutation: ProductDeleteMutation(input: ProductDeleteInput(id: productId)))
-         {  [weak self] result in
+        apolloNetworkHelper.appolloClient.perform(mutation: ProductDeleteMutation(input: ProductDeleteInput(id: productId)))
+        {  [weak self] result in
             switch result {
             case .success(let graphQLResult):debugPrint("graphResult: \(graphQLResult)")
                 if let errors = graphQLResult.errors{
@@ -199,4 +199,4 @@ class ProductDetailsViewModel
     
     
 }
- 
+

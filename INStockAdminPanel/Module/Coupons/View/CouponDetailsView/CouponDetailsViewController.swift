@@ -17,19 +17,14 @@ class CouponDetailsViewController: UIViewController {
     var couponIDStr  : String?
     var couponTitleStr : String?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
     
-    
-    
-    
     @IBAction func saveCouponTF(_ sender: Any) {
-        if  (couponTitleTF.text == "") || (couponDiscountTF.text == "")  
+        if  (couponTitleTF.text == "") || (couponDiscountTF.text == "")
         {
             let alert = UIAlertController(title:"Warning!!!", message: "Please Fill valid Data ", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] UIAlertAction in
@@ -37,7 +32,7 @@ class CouponDetailsViewController: UIViewController {
                 dismiss(animated: true)
             }))
             self.present(alert, animated: true, completion: nil)
-
+            
         }
         else{
             

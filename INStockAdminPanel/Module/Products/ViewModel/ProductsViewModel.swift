@@ -18,14 +18,14 @@ protocol productsViewModelDelegate : AnyObject {
 class ProductsViewModel
 {
     var productsList = [ProductsQuery.Data.Product]()
-   var imagesList = [ImagesQuery.Data.Product]()
+    var imagesList = [ImagesQuery.Data.Product]()
     weak var delegate :productsViewModelDelegate?
     
     
     // READ DATA
     func fetchProducts()
     {
-   //     productsList.removeAll()
+        //     productsList.removeAll()
         let apolloNetworkHelper = ApolloNetworkHelper.shared
         apolloNetworkHelper.graphQlType = .products
         
@@ -42,14 +42,14 @@ class ProductsViewModel
                 if let productConnection = graphQLResult.data?.products
                 {
                     self?.imagesList.append(productConnection)
-
+                    
                 }
                 self?.delegate?.didReceivedData()
             case .failure(let error):
                 debugPrint("Failure Error : \(error)")
                 self?.delegate?.didFail(errorMessage:error.localizedDescription)
             }
-
+            
         }
         
         apolloNetworkHelper.appolloClient.fetch(query: ProductsQuery())
@@ -75,5 +75,5 @@ class ProductsViewModel
         }
         
     }}
-    
-   
+
+

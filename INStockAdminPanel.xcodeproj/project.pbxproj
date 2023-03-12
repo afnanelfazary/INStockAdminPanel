@@ -172,13 +172,8 @@
 		44156E5A29B390EF00FF473B /* INStockAdminPanel */ = {
 			isa = PBXGroup;
 			children = (
+				44F11CCB29BE9651003972B6 /* Utilities */,
 				44156E8C29B3938D00FF473B /* Module */,
-				44156E5B29B390EF00FF473B /* AppDelegate.swift */,
-				44156E5D29B390EF00FF473B /* SceneDelegate.swift */,
-				44156E5F29B390EF00FF473B /* ViewController.swift */,
-				44156E6129B390EF00FF473B /* Main.storyboard */,
-				44156E6429B390F200FF473B /* Assets.xcassets */,
-				44156E6629B390F200FF473B /* LaunchScreen.storyboard */,
 				44156E6929B390F200FF473B /* Info.plist */,
 			);
 			path = INStockAdminPanel;
@@ -366,6 +361,19 @@
 				44953AA529B7FF1F005CCF2B /* ProductDetailsViewController.swift */,
 			);
 			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		44F11CCB29BE9651003972B6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				44156E6429B390F200FF473B /* Assets.xcassets */,
+				44156E6629B390F200FF473B /* LaunchScreen.storyboard */,
+				44156E6129B390EF00FF473B /* Main.storyboard */,
+				44156E5B29B390EF00FF473B /* AppDelegate.swift */,
+				44156E5F29B390EF00FF473B /* ViewController.swift */,
+				44156E5D29B390EF00FF473B /* SceneDelegate.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		84131690E3627C59D0E1E23B /* Pods */ = {

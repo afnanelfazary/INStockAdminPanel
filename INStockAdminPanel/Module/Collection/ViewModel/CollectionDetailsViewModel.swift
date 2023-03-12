@@ -10,7 +10,7 @@ import Apollo
 class CollectionDetailsViewModel
 {
     var smartCollectionDetails = SmartCollectionQuery.Data.Collection.self
- 
+    
     var bindResultToCollectionView : (() -> ()) = {}
     var CollectionID : Int!   {
         didSet{
@@ -38,7 +38,7 @@ class CollectionDetailsViewModel
             bindResultToCollectionView()
         }
     }
-   
+    
     // Create Collection
     func createCollection()
     {

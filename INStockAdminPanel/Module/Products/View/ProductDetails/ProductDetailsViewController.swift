@@ -18,7 +18,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productDescriptionTF: UITextField!
     
     @IBOutlet weak var productTypeSegmented: UISegmentedControl!
-        
+    
     var productIDStr  : String?
     var productImageUrlStr : String?
     var productTitleStr : String?
@@ -30,7 +30,7 @@ class ProductDetailsViewController: UIViewController {
     
     //view Model
     var productDetailsViewModel : ProductDetailsViewModel = ProductDetailsViewModel()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBrandMenu()
@@ -57,9 +57,9 @@ class ProductDetailsViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] UIAlertAction in
                 
                 dismiss(animated: true)
-             }))
+            }))
             self.present(alert, animated: true, completion: nil)
-
+            
         }
         else{
             if flagOperation == "Add"
@@ -220,6 +220,6 @@ class ProductDetailsViewController: UIViewController {
             break
         }
     }
-
+    
 }
 
