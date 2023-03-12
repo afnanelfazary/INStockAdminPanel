@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Logo_Maker_com.ist.logomaker_Mon_Mar_13_01_10_32_GMT_02_00_2023_1678662632971.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
