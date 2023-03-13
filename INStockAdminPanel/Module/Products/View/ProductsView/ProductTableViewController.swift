@@ -90,8 +90,7 @@ class ProductTableViewController: UITableViewController
         productDetailsVC.productTypeStr = ProductViewModel.productsList.first?.edges[indexPath.row].node.productType
         productDetailsVC.productDescriptionStr = ProductViewModel.productsList.first?.edges[indexPath.row].node.bodyHtml
         productDetailsVC.productPriceStr = ProductViewModel.productsList.first?.edges[indexPath.row].node.variants.edges.first?.node.price
-        
-        //  productDetailsVC.productImageUrlStr = ProductViewModel.productsList.first?.edges[indexPath.row].node.variants.
+        productDetailsVC.productImageUrlStr = ProductViewModel.imagesList.first?.edges[indexPath.row].node.images.edges[0].node.src
         self.navigationController?.pushViewController(productDetailsVC, animated: true)
     }
     //swife to delete
