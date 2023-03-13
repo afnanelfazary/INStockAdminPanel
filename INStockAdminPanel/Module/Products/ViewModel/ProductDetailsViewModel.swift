@@ -114,7 +114,11 @@ class ProductDetailsViewModel
     func createProduct()
     {         let imageInput = ImageInput(src: productImg)
         
-        //let imageInput = ImageInput(src: "    https://m.media-amazon.com/images/I/51F2eyEpomL._AC_SL1500_.jpg")
+         //test product
+        //img : https://m.media-amazon.com/images/I/81FmV2RrZKL._AC_SL1500_.jpg
+        
+       // title : PUMA Shoes
+        //Desc : PUMA ULTRA 3.4 FG/AG Jr Diamond Silver-Neon C,PUMA
         let apolloNetworkHelper = ApolloNetworkHelper.shared
         apolloNetworkHelper.graphQlType = .products
         let ProductInput = ProductInput.init(descriptionHtml: productDescription, productType: productTypeInput, title:("\(productBrand!) | \(productTitleInput!)") , vendor: productBrand, images: [imageInput], variants: [ProductVariantInput(price: productPrice)], status: .active )

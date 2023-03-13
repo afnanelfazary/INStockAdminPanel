@@ -6,15 +6,21 @@
 //
 
 import Foundation
+import Apollo
 class CouponDetailsViewModel  {
     var couponDetails = CouponsQuery.Data.CodeDiscountNode.self
-    var bindResultToProductView : (() -> ()) = {}
+    var bindResultToCouponView : (() -> ()) = {}
     
-    var collectionTitleInput : String!  {
+    var couponTitle  : String!  {
         didSet{
-            bindResultToProductView()
+            bindResultToCouponView()
         }
     }
     
-
+    var couponDiscount  : String!  {
+        didSet{
+            bindResultToCouponView()
+        }
+    }
+    
 }

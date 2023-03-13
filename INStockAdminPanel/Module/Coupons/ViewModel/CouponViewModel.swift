@@ -4,9 +4,6 @@
 //
 //  Created by Afnan on 11/03/2023.
 //
-
-import Foundation
-import Apollo
 protocol couponsViewModelDelegate : AnyObject {
     
     func  didReceivedData()
@@ -46,6 +43,7 @@ class CouponViewModel
             }
         }
         
-    }}
-
-
+    }
+}
+    
+    

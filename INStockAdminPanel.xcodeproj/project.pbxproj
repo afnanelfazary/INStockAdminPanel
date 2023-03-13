@@ -19,6 +19,8 @@
 		44156E7F29B390F300FF473B /* INStockAdminPanelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156E7E29B390F300FF473B /* INStockAdminPanelUITestsLaunchTests.swift */; };
 		44156E9729B3A17C00FF473B /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156E9629B3A17C00FF473B /* ProductTableViewController.swift */; };
 		44156E9929B3A1A000FF473B /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156E9829B3A1A000FF473B /* ProductTableViewCell.swift */; };
+		4466A96D29BF07CA00AC29D4 /* Encodable + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466A96C29BF07CA00AC29D4 /* Encodable + extension.swift */; };
+		4466A96F29BF07F800AC29D4 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466A96E29BF07F800AC29D4 /* Coupon.swift */; };
 		446B798129B67AC5004D8586 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 446B798029B67AC5004D8586 /* schema.json */; };
 		446B79B529B6CBFC004D8586 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 446B79B429B6CBFC004D8586 /* Apollo */; };
 		446B79B729B6D38A004D8586 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B79B629B6D38A004D8586 /* API.swift */; };
@@ -82,6 +84,8 @@
 		44156E7E29B390F300FF473B /* INStockAdminPanelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INStockAdminPanelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		44156E9629B3A17C00FF473B /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 		44156E9829B3A1A000FF473B /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		4466A96C29BF07CA00AC29D4 /* Encodable + extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable + extension.swift"; sourceTree = "<group>"; };
+		4466A96E29BF07F800AC29D4 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		446B798029B67AC5004D8586 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		446B79B629B6D38A004D8586 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		446B79B829B6DF91004D8586 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 		44156E8B29B3938200FF473B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4466A96E29BF07F800AC29D4 /* Coupon.swift */,
+				4466A96C29BF07CA00AC29D4 /* Encodable + extension.swift */,
 				44CF341229BBE72800D0D74A /* NetworkManger.swift */,
 				44CF341029BBE66300D0D74A /* CollectionDataModel.swift */,
 				446B798F29B694DC004D8586 /* GraphQL */,
@@ -686,12 +692,14 @@
 				446B79B929B6DF91004D8586 /* ProductsViewModel.swift in Sources */,
 				447A575F29BB78AA00B074FE /* CollectionDetailsViewController.swift in Sources */,
 				44156E9729B3A17C00FF473B /* ProductTableViewController.swift in Sources */,
+				4466A96F29BF07F800AC29D4 /* Coupon.swift in Sources */,
 				446C159629BC4EC400ADBAF6 /* CouponDetailsViewModel.swift in Sources */,
 				44953AA629B7FF1F005CCF2B /* ProductDetailsViewController.swift in Sources */,
 				44F0E7ED29B556D2002962BB /* ApolloNetworkHelper.swift in Sources */,
 				446C159429BC4EAA00ADBAF6 /* CouponViewModel.swift in Sources */,
 				44156E6029B390EF00FF473B /* ViewController.swift in Sources */,
 				44156E9929B3A1A000FF473B /* ProductTableViewCell.swift in Sources */,
+				4466A96D29BF07CA00AC29D4 /* Encodable + extension.swift in Sources */,
 				446C159229BC4E6900ADBAF6 /* CouponDetailsViewController.swift in Sources */,
 				44156E5C29B390EF00FF473B /* AppDelegate.swift in Sources */,
 				447A575929BB785600B074FE /* CollectionViewModel.swift in Sources */,

@@ -16,19 +16,15 @@ class CouponTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.reloadData()
-        
+ 
         fetchAPI()
-        tableView.reloadData()
-        
+ 
     }
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-        
+        fetchAPI()
     }
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-        
+        fetchAPI()
     }
     func fetchAPI()
     {
@@ -52,10 +48,7 @@ class CouponTableViewController: UITableViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print(couponViewModel.couponsList.count)
-        print(couponViewModel.couponsList.first?.edges[0].node.codeDiscount.asDiscountCodeBasic?.title)
-        return couponViewModel.couponsList.first?.edges.count ?? 0
+        return couponViewModel.couponsList.first?.edges[0].node.codeDiscount.asDiscountCodeBasic?.codes.edges.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,10 +59,8 @@ class CouponTableViewController: UITableViewController {
         cell.layer.borderColor = #colorLiteral(red: 0.9725490196, green: 0.9098039216, blue: 0.9137254902, alpha: 0.3691322064)
         cell.layer.borderWidth = 1
         // Configure the cell
-        // cell.couponTitle.text = couponViewModel.couponsList.first?.nodes[indexPath.row].codeDiscount.asDiscountCodeBasic?.title
-        cell.couponTitle.text = couponViewModel.couponsList.first?.edges[indexPath.row].node.codeDiscount.asDiscountCodeBasic?.title
-        //cell.couponDiscount.text =  couponViewModel.couponsList[indexPath.row].nodes.first?.codeDiscount.asDiscountCodeBasic?.startsAt
-        
+        cell.couponTitle.text = couponViewModel.couponsList.first?.edges.first?.node.codeDiscount.asDiscountCodeBasic?.codes.edges[indexPath.row].node.code
+ 
         return cell
     }
     

@@ -1,5 +1,5 @@
-query coupons{
- codeDiscountNodes(first: 10) {
+query coupons {
+  codeDiscountNodes(first: 10) {
     edges {
       node {
         id
@@ -12,12 +12,21 @@ query coupons{
             title
             createdAt
             codeCount
+            codes(first: 10) {
+              edges {
+                node {
+                  code
+                  id
+                }
+              }
+            }
           }
         }
       }
     }
   }
 }
+
  
 
 
@@ -63,3 +72,48 @@ query coupons{
   }
 }
  
+
+mutation discountRedeemCodeBulkAdd($codes: [DiscountRedeemCodeInput!]!, $discountId: ID!) {
+  discountRedeemCodeBulkAdd(codes: $codes, discountId: $discountId) {
+
+    bulkCreation {
+      codes(first: 10) {
+        edges {
+          node {
+            code
+            discountRedeemCode {
+              code
+              asyncUsageCount
+              id
+            }
+          }
+        }
+      }
+      codesCount
+      discountCode {
+        id
+        codeDiscount {
+          ... on DiscountCodeBasic {
+            endsAt
+            recurringCycleLimit
+            codes(first: 10) {
+              edges {
+                node {
+                  code
+                  id
+                }
+              }
+            }
+            title
+            summary
+            status
+            startsAt
+            shortSummary
+            createdAt
+          }
+        }
+      }
+      id
+    }
+  }
+}

@@ -42,6 +42,10 @@ class CollectionDetailsViewModel
     // Create Collection
     func createCollection()
     {
+        
+        //testCollection
+     //   img : https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/800px-Louis_Vuitton_logo_and_wordmark.svg.png
+       // Louis Vuitton
         let imageInput = ImageInput(src: collectionImg)
         let ruleInput = CollectionRuleInput(column:.title, relation: .contains, condition: collectionTitle)
         let apolloNetworkHelper = ApolloNetworkHelper.shared

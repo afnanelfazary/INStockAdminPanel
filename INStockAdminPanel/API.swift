@@ -1694,6 +1694,76 @@ public enum DiscountErrorCode: RawRepresentable, Equatable, Hashable, CaseIterab
   }
 }
 
+/// The redeem code to attach to a discount.
+public struct DiscountRedeemCodeInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - code: The code that a customer can use at checkout to receive the associated discount.
+  public init(code: String) {
+    graphQLMap = ["code": code]
+  }
+
+  /// The code that a customer can use at checkout to receive the associated discount.
+  public var code: String {
+    get {
+      return graphQLMap["code"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "code")
+    }
+  }
+}
+
+/// The status of the discount.
+public enum DiscountStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  /// The discount is active.
+  case active
+  /// The discount is expired.
+  case expired
+  /// The discount is scheduled.
+  case scheduled
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "ACTIVE": self = .active
+      case "EXPIRED": self = .expired
+      case "SCHEDULED": self = .scheduled
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .active: return "ACTIVE"
+      case .expired: return "EXPIRED"
+      case .scheduled: return "SCHEDULED"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: DiscountStatus, rhs: DiscountStatus) -> Bool {
+    switch (lhs, rhs) {
+      case (.active, .active): return true
+      case (.expired, .expired): return true
+      case (.scheduled, .scheduled): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [DiscountStatus] {
+    return [
+      .active,
+      .expired,
+      .scheduled,
+    ]
+  }
+}
+
 /// The possible product statuses.
 public enum ProductStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
@@ -3817,6 +3887,17 @@ public final class CouponsQuery: GraphQLQuery {
                 title
                 createdAt
                 codeCount
+                codes(first: 10) {
+                  __typename
+                  edges {
+                    __typename
+                    node {
+                      __typename
+                      code
+                      id
+                    }
+                  }
+                }
               }
             }
           }
@@ -4021,8 +4102,8 @@ public final class CouponsQuery: GraphQLQuery {
               return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeFreeShipping"])
             }
 
-            public static func makeDiscountCodeBasic(endsAt: String? = nil, recurringCycleLimit: Int? = nil, startsAt: String, title: String, createdAt: String, codeCount: Int) -> CodeDiscount {
-              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "startsAt": startsAt, "title": title, "createdAt": createdAt, "codeCount": codeCount])
+            public static func makeDiscountCodeBasic(endsAt: String? = nil, recurringCycleLimit: Int? = nil, startsAt: String, title: String, createdAt: String, codeCount: Int, codes: AsDiscountCodeBasic.Code) -> CodeDiscount {
+              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "startsAt": startsAt, "title": title, "createdAt": createdAt, "codeCount": codeCount, "codes": codes.resultMap])
             }
 
             public var __typename: String {
@@ -4058,6 +4139,7 @@ public final class CouponsQuery: GraphQLQuery {
                   GraphQLField("title", type: .nonNull(.scalar(String.self))),
                   GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
                   GraphQLField("codeCount", type: .nonNull(.scalar(Int.self))),
+                  GraphQLField("codes", arguments: ["first": 10], type: .nonNull(.object(Code.selections))),
                 ]
               }
 
@@ -4067,8 +4149,8 @@ public final class CouponsQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(endsAt: String? = nil, recurringCycleLimit: Int? = nil, startsAt: String, title: String, createdAt: String, codeCount: Int) {
-                self.init(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "startsAt": startsAt, "title": title, "createdAt": createdAt, "codeCount": codeCount])
+              public init(endsAt: String? = nil, recurringCycleLimit: Int? = nil, startsAt: String, title: String, createdAt: String, codeCount: Int, codes: Code) {
+                self.init(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "startsAt": startsAt, "title": title, "createdAt": createdAt, "codeCount": codeCount, "codes": codes.resultMap])
               }
 
               public var __typename: String {
@@ -4137,6 +4219,147 @@ public final class CouponsQuery: GraphQLQuery {
                 }
                 set {
                   resultMap.updateValue(newValue, forKey: "codeCount")
+                }
+              }
+
+              /// A list of redeem codes for the discount.
+              public var codes: Code {
+                get {
+                  return Code(unsafeResultMap: resultMap["codes"]! as! ResultMap)
+                }
+                set {
+                  resultMap.updateValue(newValue.resultMap, forKey: "codes")
+                }
+              }
+
+              public struct Code: GraphQLSelectionSet {
+                public static let possibleTypes: [String] = ["DiscountRedeemCodeConnection"]
+
+                public static var selections: [GraphQLSelection] {
+                  return [
+                    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("edges", type: .nonNull(.list(.nonNull(.object(Edge.selections))))),
+                  ]
+                }
+
+                public private(set) var resultMap: ResultMap
+
+                public init(unsafeResultMap: ResultMap) {
+                  self.resultMap = unsafeResultMap
+                }
+
+                public init(edges: [Edge]) {
+                  self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeConnection", "edges": edges.map { (value: Edge) -> ResultMap in value.resultMap }])
+                }
+
+                public var __typename: String {
+                  get {
+                    return resultMap["__typename"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "__typename")
+                  }
+                }
+
+                /// A list of edges.
+                public var edges: [Edge] {
+                  get {
+                    return (resultMap["edges"] as! [ResultMap]).map { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) }
+                  }
+                  set {
+                    resultMap.updateValue(newValue.map { (value: Edge) -> ResultMap in value.resultMap }, forKey: "edges")
+                  }
+                }
+
+                public struct Edge: GraphQLSelectionSet {
+                  public static let possibleTypes: [String] = ["DiscountRedeemCodeEdge"]
+
+                  public static var selections: [GraphQLSelection] {
+                    return [
+                      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("node", type: .nonNull(.object(Node.selections))),
+                    ]
+                  }
+
+                  public private(set) var resultMap: ResultMap
+
+                  public init(unsafeResultMap: ResultMap) {
+                    self.resultMap = unsafeResultMap
+                  }
+
+                  public init(node: Node) {
+                    self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeEdge", "node": node.resultMap])
+                  }
+
+                  public var __typename: String {
+                    get {
+                      return resultMap["__typename"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "__typename")
+                    }
+                  }
+
+                  /// The item at the end of DiscountRedeemCodeEdge.
+                  public var node: Node {
+                    get {
+                      return Node(unsafeResultMap: resultMap["node"]! as! ResultMap)
+                    }
+                    set {
+                      resultMap.updateValue(newValue.resultMap, forKey: "node")
+                    }
+                  }
+
+                  public struct Node: GraphQLSelectionSet {
+                    public static let possibleTypes: [String] = ["DiscountRedeemCode"]
+
+                    public static var selections: [GraphQLSelection] {
+                      return [
+                        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+                      ]
+                    }
+
+                    public private(set) var resultMap: ResultMap
+
+                    public init(unsafeResultMap: ResultMap) {
+                      self.resultMap = unsafeResultMap
+                    }
+
+                    public init(code: String, id: GraphQLID) {
+                      self.init(unsafeResultMap: ["__typename": "DiscountRedeemCode", "code": code, "id": id])
+                    }
+
+                    public var __typename: String {
+                      get {
+                        return resultMap["__typename"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "__typename")
+                      }
+                    }
+
+                    /// The code that a customer can use at checkout to receive a discount.
+                    public var code: String {
+                      get {
+                        return resultMap["code"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "code")
+                      }
+                    }
+
+                    /// A globally-unique identifier of the discount redeem code.
+                    public var id: GraphQLID {
+                      get {
+                        return resultMap["id"]! as! GraphQLID
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "id")
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -4974,6 +5197,789 @@ public final class DiscountCodeBasicCreateMutation: GraphQLMutation {
           }
           set {
             resultMap.updateValue(newValue, forKey: "message")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class DiscountRedeemCodeBulkAddMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation discountRedeemCodeBulkAdd($codes: [DiscountRedeemCodeInput!]!, $discountId: ID!) {
+      discountRedeemCodeBulkAdd(codes: $codes, discountId: $discountId) {
+        __typename
+        bulkCreation {
+          __typename
+          codes(first: 10) {
+            __typename
+            edges {
+              __typename
+              node {
+                __typename
+                code
+                discountRedeemCode {
+                  __typename
+                  code
+                  asyncUsageCount
+                  id
+                }
+              }
+            }
+          }
+          codesCount
+          discountCode {
+            __typename
+            id
+            codeDiscount {
+              __typename
+              ... on DiscountCodeBasic {
+                __typename
+                endsAt
+                recurringCycleLimit
+                codes(first: 10) {
+                  __typename
+                  edges {
+                    __typename
+                    node {
+                      __typename
+                      code
+                      id
+                    }
+                  }
+                }
+                title
+                summary
+                status
+                startsAt
+                shortSummary
+                createdAt
+              }
+            }
+          }
+          id
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "discountRedeemCodeBulkAdd"
+
+  public var codes: [DiscountRedeemCodeInput]
+  public var discountId: GraphQLID
+
+  public init(codes: [DiscountRedeemCodeInput], discountId: GraphQLID) {
+    self.codes = codes
+    self.discountId = discountId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["codes": codes, "discountId": discountId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("discountRedeemCodeBulkAdd", arguments: ["codes": GraphQLVariable("codes"), "discountId": GraphQLVariable("discountId")], type: .object(DiscountRedeemCodeBulkAdd.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(discountRedeemCodeBulkAdd: DiscountRedeemCodeBulkAdd? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "discountRedeemCodeBulkAdd": discountRedeemCodeBulkAdd.flatMap { (value: DiscountRedeemCodeBulkAdd) -> ResultMap in value.resultMap }])
+    }
+
+    /// Asynchronously add discount redeem codes in bulk. Specify the codes to add
+    /// and the discount code ID that the codes will belong to.
+    public var discountRedeemCodeBulkAdd: DiscountRedeemCodeBulkAdd? {
+      get {
+        return (resultMap["discountRedeemCodeBulkAdd"] as? ResultMap).flatMap { DiscountRedeemCodeBulkAdd(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "discountRedeemCodeBulkAdd")
+      }
+    }
+
+    public struct DiscountRedeemCodeBulkAdd: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["DiscountRedeemCodeBulkAddPayload"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("bulkCreation", type: .object(BulkCreation.selections)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(bulkCreation: BulkCreation? = nil) {
+        self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeBulkAddPayload", "bulkCreation": bulkCreation.flatMap { (value: BulkCreation) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The ID of the discount redeem code bulk creation operation. The properties and status of the operation can be tracked using the [`DiscountRedeemCodeBulkCreation` query](https://shopify.dev/api/admin-graphql/2022-04/queries/discountRedeemCodeBulkCreation).
+      public var bulkCreation: BulkCreation? {
+        get {
+          return (resultMap["bulkCreation"] as? ResultMap).flatMap { BulkCreation(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "bulkCreation")
+        }
+      }
+
+      public struct BulkCreation: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["DiscountRedeemCodeBulkCreation"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("codes", arguments: ["first": 10], type: .nonNull(.object(Code.selections))),
+            GraphQLField("codesCount", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("discountCode", type: .object(DiscountCode.selections)),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(codes: Code, codesCount: Int, discountCode: DiscountCode? = nil, id: GraphQLID) {
+          self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeBulkCreation", "codes": codes.resultMap, "codesCount": codesCount, "discountCode": discountCode.flatMap { (value: DiscountCode) -> ResultMap in value.resultMap }, "id": id])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The result of each code creation operation associated with the bulk creation operation including any errors that might have occurred during the operation.
+        public var codes: Code {
+          get {
+            return Code(unsafeResultMap: resultMap["codes"]! as! ResultMap)
+          }
+          set {
+            resultMap.updateValue(newValue.resultMap, forKey: "codes")
+          }
+        }
+
+        /// The number of codes to create.
+        public var codesCount: Int {
+          get {
+            return resultMap["codesCount"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "codesCount")
+          }
+        }
+
+        /// The code discount associated with the created codes.
+        public var discountCode: DiscountCode? {
+          get {
+            return (resultMap["discountCode"] as? ResultMap).flatMap { DiscountCode(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "discountCode")
+          }
+        }
+
+        /// A globally-unique identifier.
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public struct Code: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["DiscountRedeemCodeBulkCreationCodeConnection"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("edges", type: .nonNull(.list(.nonNull(.object(Edge.selections))))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(edges: [Edge]) {
+            self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeBulkCreationCodeConnection", "edges": edges.map { (value: Edge) -> ResultMap in value.resultMap }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// A list of edges.
+          public var edges: [Edge] {
+            get {
+              return (resultMap["edges"] as! [ResultMap]).map { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) }
+            }
+            set {
+              resultMap.updateValue(newValue.map { (value: Edge) -> ResultMap in value.resultMap }, forKey: "edges")
+            }
+          }
+
+          public struct Edge: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["DiscountRedeemCodeBulkCreationCodeEdge"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("node", type: .nonNull(.object(Node.selections))),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(node: Node) {
+              self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeBulkCreationCodeEdge", "node": node.resultMap])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The item at the end of DiscountRedeemCodeBulkCreationCodeEdge.
+            public var node: Node {
+              get {
+                return Node(unsafeResultMap: resultMap["node"]! as! ResultMap)
+              }
+              set {
+                resultMap.updateValue(newValue.resultMap, forKey: "node")
+              }
+            }
+
+            public struct Node: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["DiscountRedeemCodeBulkCreationCode"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("code", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("discountRedeemCode", type: .object(DiscountRedeemCode.selections)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(code: String, discountRedeemCode: DiscountRedeemCode? = nil) {
+                self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeBulkCreationCode", "code": code, "discountRedeemCode": discountRedeemCode.flatMap { (value: DiscountRedeemCode) -> ResultMap in value.resultMap }])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The code to use in the discount redeem code creation operation.
+              public var code: String {
+                get {
+                  return resultMap["code"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "code")
+                }
+              }
+
+              /// The successfully created discount redeem code.
+              /// 
+              /// If the discount redeem code couldn't be created, then this field is `null``.
+              public var discountRedeemCode: DiscountRedeemCode? {
+                get {
+                  return (resultMap["discountRedeemCode"] as? ResultMap).flatMap { DiscountRedeemCode(unsafeResultMap: $0) }
+                }
+                set {
+                  resultMap.updateValue(newValue?.resultMap, forKey: "discountRedeemCode")
+                }
+              }
+
+              public struct DiscountRedeemCode: GraphQLSelectionSet {
+                public static let possibleTypes: [String] = ["DiscountRedeemCode"]
+
+                public static var selections: [GraphQLSelection] {
+                  return [
+                    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("code", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("asyncUsageCount", type: .nonNull(.scalar(Int.self))),
+                    GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+                  ]
+                }
+
+                public private(set) var resultMap: ResultMap
+
+                public init(unsafeResultMap: ResultMap) {
+                  self.resultMap = unsafeResultMap
+                }
+
+                public init(code: String, asyncUsageCount: Int, id: GraphQLID) {
+                  self.init(unsafeResultMap: ["__typename": "DiscountRedeemCode", "code": code, "asyncUsageCount": asyncUsageCount, "id": id])
+                }
+
+                public var __typename: String {
+                  get {
+                    return resultMap["__typename"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "__typename")
+                  }
+                }
+
+                /// The code that a customer can use at checkout to receive a discount.
+                public var code: String {
+                  get {
+                    return resultMap["code"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "code")
+                  }
+                }
+
+                /// The number of times that the discount redeem code has been used. This value is updated asynchronously and can be different than the actual usage count.
+                public var asyncUsageCount: Int {
+                  get {
+                    return resultMap["asyncUsageCount"]! as! Int
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "asyncUsageCount")
+                  }
+                }
+
+                /// A globally-unique identifier of the discount redeem code.
+                public var id: GraphQLID {
+                  get {
+                    return resultMap["id"]! as! GraphQLID
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "id")
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        public struct DiscountCode: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["DiscountCodeNode"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+              GraphQLField("codeDiscount", type: .nonNull(.object(CodeDiscount.selections))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(id: GraphQLID, codeDiscount: CodeDiscount) {
+            self.init(unsafeResultMap: ["__typename": "DiscountCodeNode", "id": id, "codeDiscount": codeDiscount.resultMap])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// A globally-unique identifier.
+          public var id: GraphQLID {
+            get {
+              return resultMap["id"]! as! GraphQLID
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "id")
+            }
+          }
+
+          /// The underlying code discount object.
+          public var codeDiscount: CodeDiscount {
+            get {
+              return CodeDiscount(unsafeResultMap: resultMap["codeDiscount"]! as! ResultMap)
+            }
+            set {
+              resultMap.updateValue(newValue.resultMap, forKey: "codeDiscount")
+            }
+          }
+
+          public struct CodeDiscount: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["DiscountCodeApp", "DiscountCodeBasic", "DiscountCodeBxgy", "DiscountCodeFreeShipping"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLTypeCase(
+                  variants: ["DiscountCodeBasic": AsDiscountCodeBasic.selections],
+                  default: [
+                    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  ]
+                )
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public static func makeDiscountCodeApp() -> CodeDiscount {
+              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeApp"])
+            }
+
+            public static func makeDiscountCodeBxgy() -> CodeDiscount {
+              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeBxgy"])
+            }
+
+            public static func makeDiscountCodeFreeShipping() -> CodeDiscount {
+              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeFreeShipping"])
+            }
+
+            public static func makeDiscountCodeBasic(endsAt: String? = nil, recurringCycleLimit: Int? = nil, codes: AsDiscountCodeBasic.Code, title: String, summary: String, status: DiscountStatus, startsAt: String, shortSummary: String, createdAt: String) -> CodeDiscount {
+              return CodeDiscount(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "codes": codes.resultMap, "title": title, "summary": summary, "status": status, "startsAt": startsAt, "shortSummary": shortSummary, "createdAt": createdAt])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var asDiscountCodeBasic: AsDiscountCodeBasic? {
+              get {
+                if !AsDiscountCodeBasic.possibleTypes.contains(__typename) { return nil }
+                return AsDiscountCodeBasic(unsafeResultMap: resultMap)
+              }
+              set {
+                guard let newValue = newValue else { return }
+                resultMap = newValue.resultMap
+              }
+            }
+
+            public struct AsDiscountCodeBasic: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["DiscountCodeBasic"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("endsAt", type: .scalar(String.self)),
+                  GraphQLField("recurringCycleLimit", type: .scalar(Int.self)),
+                  GraphQLField("codes", arguments: ["first": 10], type: .nonNull(.object(Code.selections))),
+                  GraphQLField("title", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("summary", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("status", type: .nonNull(.scalar(DiscountStatus.self))),
+                  GraphQLField("startsAt", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("shortSummary", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(endsAt: String? = nil, recurringCycleLimit: Int? = nil, codes: Code, title: String, summary: String, status: DiscountStatus, startsAt: String, shortSummary: String, createdAt: String) {
+                self.init(unsafeResultMap: ["__typename": "DiscountCodeBasic", "endsAt": endsAt, "recurringCycleLimit": recurringCycleLimit, "codes": codes.resultMap, "title": title, "summary": summary, "status": status, "startsAt": startsAt, "shortSummary": shortSummary, "createdAt": createdAt])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// The date and time when the discount ends. For open-ended discounts, use `null`.
+              public var endsAt: String? {
+                get {
+                  return resultMap["endsAt"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "endsAt")
+                }
+              }
+
+              /// The number of times a discount applies on recurring purchases (subscriptions).
+              public var recurringCycleLimit: Int? {
+                get {
+                  return resultMap["recurringCycleLimit"] as? Int
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "recurringCycleLimit")
+                }
+              }
+
+              /// A list of redeem codes for the discount.
+              public var codes: Code {
+                get {
+                  return Code(unsafeResultMap: resultMap["codes"]! as! ResultMap)
+                }
+                set {
+                  resultMap.updateValue(newValue.resultMap, forKey: "codes")
+                }
+              }
+
+              /// The title of the discount.
+              public var title: String {
+                get {
+                  return resultMap["title"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "title")
+                }
+              }
+
+              /// A detailed summary of the discount.
+              public var summary: String {
+                get {
+                  return resultMap["summary"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "summary")
+                }
+              }
+
+              /// The status of the discount.
+              public var status: DiscountStatus {
+                get {
+                  return resultMap["status"]! as! DiscountStatus
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "status")
+                }
+              }
+
+              /// The date and time when the discount starts.
+              public var startsAt: String {
+                get {
+                  return resultMap["startsAt"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "startsAt")
+                }
+              }
+
+              /// A short summary of the discount.
+              public var shortSummary: String {
+                get {
+                  return resultMap["shortSummary"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "shortSummary")
+                }
+              }
+
+              /// The date and time when the discount was created.
+              public var createdAt: String {
+                get {
+                  return resultMap["createdAt"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "createdAt")
+                }
+              }
+
+              public struct Code: GraphQLSelectionSet {
+                public static let possibleTypes: [String] = ["DiscountRedeemCodeConnection"]
+
+                public static var selections: [GraphQLSelection] {
+                  return [
+                    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("edges", type: .nonNull(.list(.nonNull(.object(Edge.selections))))),
+                  ]
+                }
+
+                public private(set) var resultMap: ResultMap
+
+                public init(unsafeResultMap: ResultMap) {
+                  self.resultMap = unsafeResultMap
+                }
+
+                public init(edges: [Edge]) {
+                  self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeConnection", "edges": edges.map { (value: Edge) -> ResultMap in value.resultMap }])
+                }
+
+                public var __typename: String {
+                  get {
+                    return resultMap["__typename"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "__typename")
+                  }
+                }
+
+                /// A list of edges.
+                public var edges: [Edge] {
+                  get {
+                    return (resultMap["edges"] as! [ResultMap]).map { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) }
+                  }
+                  set {
+                    resultMap.updateValue(newValue.map { (value: Edge) -> ResultMap in value.resultMap }, forKey: "edges")
+                  }
+                }
+
+                public struct Edge: GraphQLSelectionSet {
+                  public static let possibleTypes: [String] = ["DiscountRedeemCodeEdge"]
+
+                  public static var selections: [GraphQLSelection] {
+                    return [
+                      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("node", type: .nonNull(.object(Node.selections))),
+                    ]
+                  }
+
+                  public private(set) var resultMap: ResultMap
+
+                  public init(unsafeResultMap: ResultMap) {
+                    self.resultMap = unsafeResultMap
+                  }
+
+                  public init(node: Node) {
+                    self.init(unsafeResultMap: ["__typename": "DiscountRedeemCodeEdge", "node": node.resultMap])
+                  }
+
+                  public var __typename: String {
+                    get {
+                      return resultMap["__typename"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "__typename")
+                    }
+                  }
+
+                  /// The item at the end of DiscountRedeemCodeEdge.
+                  public var node: Node {
+                    get {
+                      return Node(unsafeResultMap: resultMap["node"]! as! ResultMap)
+                    }
+                    set {
+                      resultMap.updateValue(newValue.resultMap, forKey: "node")
+                    }
+                  }
+
+                  public struct Node: GraphQLSelectionSet {
+                    public static let possibleTypes: [String] = ["DiscountRedeemCode"]
+
+                    public static var selections: [GraphQLSelection] {
+                      return [
+                        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+                      ]
+                    }
+
+                    public private(set) var resultMap: ResultMap
+
+                    public init(unsafeResultMap: ResultMap) {
+                      self.resultMap = unsafeResultMap
+                    }
+
+                    public init(code: String, id: GraphQLID) {
+                      self.init(unsafeResultMap: ["__typename": "DiscountRedeemCode", "code": code, "id": id])
+                    }
+
+                    public var __typename: String {
+                      get {
+                        return resultMap["__typename"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "__typename")
+                      }
+                    }
+
+                    /// The code that a customer can use at checkout to receive a discount.
+                    public var code: String {
+                      get {
+                        return resultMap["code"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "code")
+                      }
+                    }
+
+                    /// A globally-unique identifier of the discount redeem code.
+                    public var id: GraphQLID {
+                      get {
+                        return resultMap["id"]! as! GraphQLID
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "id")
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
