@@ -26,8 +26,7 @@ class ProductDetailsViewController: UIViewController {
     var productTypeStr : String?
     var productBrandStr : String?
     var productDescriptionStr : String?
-    var productStatusStr : String?
-    
+ 
     //view Model
     var productDetailsViewModel : ProductDetailsViewModel = ProductDetailsViewModel()
     
@@ -39,10 +38,24 @@ class ProductDetailsViewController: UIViewController {
             DispatchQueue.main.async{
                 
                 self?.productNameTF.text = self?.productTitleStr
-                self?.productDescriptionTF.text =   self?.productDescriptionStr
+                self?.productDescriptionTF.text = self?.productDescriptionStr
+                self?.productImageTF.text = self?.productImageUrlStr
                 self?.productPriceTF.text = self?.productPriceStr
-                
-                
+                if self?.productTypeStr == "ACCESSORIES"
+                {
+                    self?.productTypeSegmented.selectedSegmentIndex = 0
+                 
+                }
+                else if self?.productTypeStr == "Shoes"
+                {
+                    self?.productTypeSegmented.selectedSegmentIndex = 1
+
+                }
+                else if  self?.productTypeStr == "T-SHIRTS"
+                {
+                    self?.productTypeSegmented.selectedSegmentIndex = 2
+
+                }
             }
             
         }
