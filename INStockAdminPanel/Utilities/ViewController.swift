@@ -11,6 +11,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        navigationItem.hidesBackButton = true 
+
+        
     }
+    
+    @IBAction func getStartedBtn(_ sender: Any) {
+        
+        let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    
 }
