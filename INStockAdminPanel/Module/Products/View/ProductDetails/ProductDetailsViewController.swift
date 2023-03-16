@@ -64,7 +64,7 @@ class ProductDetailsViewController: UIViewController {
     @IBAction func saveBtn(_ sender: Any) {
         getBrandMenu()
         
-        if  (productNameTF.text == "") || (productImageTF.text == "") || (productDescriptionTF.text == "") || (productPriceTF.text == "")
+        if  (productNameTF.text == "") || (productImageTF.text == "") || (productDescriptionTF.text == "") || (productPriceTF.text == "") || (productTypeStr == "")
         {
             let alert = UIAlertController(title:"Warning!!!", message: "Please Fill valid Data ", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] UIAlertAction in
@@ -149,61 +149,59 @@ class ProductDetailsViewController: UIViewController {
         brandBtn.menu = UIMenu(title: "Brand", options: .singleSelection, children: [
             UIAction(title: "ADIDAS",handler: { [weak self] action in
                 self?.productBrandStr = "ADIDAS"
-                print("ADIDAS")
-            }),
+             }),
             UIAction(title: "DR MARTENS", handler: { [weak self] action in
                 self?.productBrandStr = "DR MARTENS"
-                print("DR MARTENS")
-            }),
+             }),
             UIAction(title: "FLEX FIT",handler: { [weak self] action in
                 self?.productBrandStr = "FLEX FIT"
-                print("FLEX FIT")
-                
+ 
             }),
             UIAction(title: "HERSCHEL",handler: { [weak self] action in
                 self?.productBrandStr = "HERSCHEL"
-                print("HERSCHEL")
-                
+ 
             }),
             UIAction(title: "NIKE",handler: { [weak self] action in
                 self?.productBrandStr = "NIKE"
-                print("NIKE")
-                
+ 
             }),
             UIAction(title: "PALLADIUM",handler: { [weak self] action in
                 self?.productBrandStr = "PALLADIUM"
-                print("PALLADIUM")
-                
+ 
             }),
             UIAction(title: "PUMA",handler: { [weak self] action in
                 self?.productBrandStr = "PUMA"
-                print("PUMA")
-                
+ 
             }),
             UIAction(title: "SUPRA",handler: { [weak self] action in
                 self?.productBrandStr = "SUPRA"
-                print("SUPRA")
-                
+ 
             }),
             UIAction(title: "TIMBERLAND",handler: { [weak self] action in
                 self?.productBrandStr = "TIMBERLAND"
-                print("TIMBERLAND")
-                
+ 
             }),
             UIAction(title: "VANS",handler: { [weak self] action in
                 self?.productBrandStr = "VANS"
-                print("VANS")
-            }),
+             }),
             UIAction(title: "ASICS TIGER",handler: { [weak self] action in
                 self?.productBrandStr = "ASICS TIGER"
-                print("ASICS TIGER")
-                
+ 
             }),
             UIAction(title: "CONVERSE",handler: { [weak self] action in
                 self?.productBrandStr = "CONVERSE"
-                print("CONVERSE")
-                
-            })
+ 
+            }),
+            UIAction(title: "Hermes",handler: { [weak self] action in
+                self?.productBrandStr = "Hermes"
+ 
+            }),
+            UIAction(title: "PRADA",handler: { [weak self] action in
+                self?.productBrandStr = "PRADA"
+              }),
+            UIAction(title: "Supreme",handler: { [weak self] action in
+                self?.productBrandStr = "Supreme"
+              })
         ])
         
         brandBtn.showsMenuAsPrimaryAction = true

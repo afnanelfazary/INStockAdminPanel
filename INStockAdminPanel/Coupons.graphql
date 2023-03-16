@@ -117,3 +117,23 @@ mutation discountRedeemCodeBulkAdd($codes: [DiscountRedeemCodeInput!]!, $discoun
     }
   }
 }
+mutation discountCodeDelete($id: ID!) {
+  discountCodeDelete(id: $id) {
+    deletedCodeDiscountId
+    userErrors {
+      field
+      message
+    }
+  }
+}
+  mutation discountCodeRedeemCodeBulkDelete($discountId: ID!) {
+  discountCodeRedeemCodeBulkDelete(discountId: $discountId) {
+    job {
+      id
+     }
+    userErrors {
+      field
+      message
+    }
+  }
+}

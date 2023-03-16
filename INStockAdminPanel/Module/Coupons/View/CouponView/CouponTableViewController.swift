@@ -59,16 +59,39 @@ class CouponTableViewController: UITableViewController {
         cell.layer.borderColor = #colorLiteral(red: 0.9725490196, green: 0.9098039216, blue: 0.9137254902, alpha: 0.3691322064)
         cell.layer.borderWidth = 1
         // Configure the cell
-        cell.couponTitle.text = couponViewModel.couponsList.first?.edges.first?.node.codeDiscount.asDiscountCodeBasic?.codes.edges[indexPath.row].node.code
- 
+    cell.couponTitle.text = couponViewModel.couponsList.first?.edges.first?.node.codeDiscount.asDiscountCodeBasic?.codes.edges[indexPath.row].node.code
+ print (cell.couponTitle.text)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 121.0
     }
-    
+    //swife to delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title:"Delete", message: "Are You Sure ?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+       //     var couponId =  couponViewModel.couponsList.first?.edges.first?.node.codeDiscount.asDiscountCodeBasic?.codes.edges[indexPath.row].node.id
+      //   var globalId = "gid://shopify/PriceRule/1380096934165/\(couponId!)"
+
+        //    couponDetailsViewModel.discountCodeDelete(discountId: globalId)
+            dismiss(animated: true)
+
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
+            dismiss(animated: true)
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+
+
+
+    }
+
 }
+
 extension CouponTableViewController : couponsViewModelDelegate
 {
     func didReceivedData() {

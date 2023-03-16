@@ -5987,6 +5987,374 @@ public final class DiscountRedeemCodeBulkAddMutation: GraphQLMutation {
   }
 }
 
+public final class DiscountCodeDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation discountCodeDelete($id: ID!) {
+      discountCodeDelete(id: $id) {
+        __typename
+        deletedCodeDiscountId
+        userErrors {
+          __typename
+          field
+          message
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "discountCodeDelete"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("discountCodeDelete", arguments: ["id": GraphQLVariable("id")], type: .object(DiscountCodeDelete.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(discountCodeDelete: DiscountCodeDelete? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "discountCodeDelete": discountCodeDelete.flatMap { (value: DiscountCodeDelete) -> ResultMap in value.resultMap }])
+    }
+
+    /// Deletes a code discount.
+    public var discountCodeDelete: DiscountCodeDelete? {
+      get {
+        return (resultMap["discountCodeDelete"] as? ResultMap).flatMap { DiscountCodeDelete(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "discountCodeDelete")
+      }
+    }
+
+    public struct DiscountCodeDelete: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["DiscountCodeDeletePayload"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("deletedCodeDiscountId", type: .scalar(GraphQLID.self)),
+          GraphQLField("userErrors", type: .nonNull(.list(.nonNull(.object(UserError.selections))))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(deletedCodeDiscountId: GraphQLID? = nil, userErrors: [UserError]) {
+        self.init(unsafeResultMap: ["__typename": "DiscountCodeDeletePayload", "deletedCodeDiscountId": deletedCodeDiscountId, "userErrors": userErrors.map { (value: UserError) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The deleted code discount ID.
+      public var deletedCodeDiscountId: GraphQLID? {
+        get {
+          return resultMap["deletedCodeDiscountId"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "deletedCodeDiscountId")
+        }
+      }
+
+      /// The list of errors that occurred from executing the mutation.
+      public var userErrors: [UserError] {
+        get {
+          return (resultMap["userErrors"] as! [ResultMap]).map { (value: ResultMap) -> UserError in UserError(unsafeResultMap: value) }
+        }
+        set {
+          resultMap.updateValue(newValue.map { (value: UserError) -> ResultMap in value.resultMap }, forKey: "userErrors")
+        }
+      }
+
+      public struct UserError: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["DiscountUserError"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("field", type: .list(.nonNull(.scalar(String.self)))),
+            GraphQLField("message", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(field: [String]? = nil, message: String) {
+          self.init(unsafeResultMap: ["__typename": "DiscountUserError", "field": field, "message": message])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The path to the input field that caused the error.
+        public var field: [String]? {
+          get {
+            return resultMap["field"] as? [String]
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "field")
+          }
+        }
+
+        /// The error message.
+        public var message: String {
+          get {
+            return resultMap["message"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "message")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class DiscountCodeRedeemCodeBulkDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation discountCodeRedeemCodeBulkDelete($discountId: ID!) {
+      discountCodeRedeemCodeBulkDelete(discountId: $discountId) {
+        __typename
+        job {
+          __typename
+          id
+        }
+        userErrors {
+          __typename
+          field
+          message
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "discountCodeRedeemCodeBulkDelete"
+
+  public var discountId: GraphQLID
+
+  public init(discountId: GraphQLID) {
+    self.discountId = discountId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["discountId": discountId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("discountCodeRedeemCodeBulkDelete", arguments: ["discountId": GraphQLVariable("discountId")], type: .object(DiscountCodeRedeemCodeBulkDelete.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(discountCodeRedeemCodeBulkDelete: DiscountCodeRedeemCodeBulkDelete? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "discountCodeRedeemCodeBulkDelete": discountCodeRedeemCodeBulkDelete.flatMap { (value: DiscountCodeRedeemCodeBulkDelete) -> ResultMap in value.resultMap }])
+    }
+
+    /// Asynchronously delete discount redeem codes in bulk. Specify the redeem codes to delete by providing a
+    /// search query, a saved search ID, or a list of redeem code IDs.
+    public var discountCodeRedeemCodeBulkDelete: DiscountCodeRedeemCodeBulkDelete? {
+      get {
+        return (resultMap["discountCodeRedeemCodeBulkDelete"] as? ResultMap).flatMap { DiscountCodeRedeemCodeBulkDelete(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "discountCodeRedeemCodeBulkDelete")
+      }
+    }
+
+    public struct DiscountCodeRedeemCodeBulkDelete: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["DiscountCodeRedeemCodeBulkDeletePayload"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("job", type: .object(Job.selections)),
+          GraphQLField("userErrors", type: .nonNull(.list(.nonNull(.object(UserError.selections))))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(job: Job? = nil, userErrors: [UserError]) {
+        self.init(unsafeResultMap: ["__typename": "DiscountCodeRedeemCodeBulkDeletePayload", "job": job.flatMap { (value: Job) -> ResultMap in value.resultMap }, "userErrors": userErrors.map { (value: UserError) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The asynchronous job that deletes the discount redeem codes.
+      public var job: Job? {
+        get {
+          return (resultMap["job"] as? ResultMap).flatMap { Job(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "job")
+        }
+      }
+
+      /// The list of errors that occurred from executing the mutation.
+      public var userErrors: [UserError] {
+        get {
+          return (resultMap["userErrors"] as! [ResultMap]).map { (value: ResultMap) -> UserError in UserError(unsafeResultMap: value) }
+        }
+        set {
+          resultMap.updateValue(newValue.map { (value: UserError) -> ResultMap in value.resultMap }, forKey: "userErrors")
+        }
+      }
+
+      public struct Job: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Job"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID) {
+          self.init(unsafeResultMap: ["__typename": "Job", "id": id])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// A globally-unique identifier that's returned when running an asynchronous mutation.
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+      }
+
+      public struct UserError: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["DiscountUserError"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("field", type: .list(.nonNull(.scalar(String.self)))),
+            GraphQLField("message", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(field: [String]? = nil, message: String) {
+          self.init(unsafeResultMap: ["__typename": "DiscountUserError", "field": field, "message": message])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The path to the input field that caused the error.
+        public var field: [String]? {
+          get {
+            return resultMap["field"] as? [String]
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "field")
+          }
+        }
+
+        /// The error message.
+        public var message: String {
+          get {
+            return resultMap["message"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "message")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class ProductsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

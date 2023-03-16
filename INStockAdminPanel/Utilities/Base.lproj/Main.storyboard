@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7RE-ha-2Ka">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vOE-R8-B51">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -439,7 +439,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_product_iteration_kjok" translatesAutoresizingMaskIntoConstraints="NO" id="4Vz-yH-9wl">
-                                <rect key="frame" x="31" y="221" width="326" height="212"/>
+                                <rect key="frame" x="31" y="177" width="326" height="256"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oX-hu-Pvu">
                                 <rect key="frame" x="47" y="513" width="234" height="44"/>
@@ -455,9 +455,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-9B-BrV">
-                                <rect key="frame" x="52" y="580" width="272" height="53"/>
+                                <rect key="frame" x="52" y="559" width="272" height="53"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="IN-Stock">
+                                    <fragment content="InStock">
                                         <attributes>
                                             <color key="NSColor" red="0.56862745100000001" green="0.19215686269999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="31" name="Times-Bold"/>
@@ -468,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyi-fy-pct">
-                                <rect key="frame" x="71" y="726" width="253" height="35"/>
+                                <rect key="frame" x="71" y="682" width="253" height="79"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <attributedString key="attributedTitle">
@@ -502,7 +502,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFE-yy-VzA">
-                                <rect key="frame" x="244" y="519" width="36" height="34"/>
+                                <rect key="frame" x="234" y="519" width="36" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Gwg-V7-9bt"/>
                                 </constraints>
@@ -521,22 +521,22 @@
                         <viewLayoutGuide key="safeArea" id="h2N-7X-yep"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DUg-9B-BrV" firstAttribute="top" secondItem="h2N-7X-yep" secondAttribute="top" constant="477" id="0SI-1A-VXy"/>
+                            <constraint firstItem="DUg-9B-BrV" firstAttribute="top" secondItem="h2N-7X-yep" secondAttribute="top" constant="500" id="0SI-1A-VXy"/>
                             <constraint firstAttribute="bottom" secondItem="qFE-yy-VzA" secondAttribute="bottom" constant="299" id="1ea-qd-lpr"/>
                             <constraint firstItem="vyi-fy-pct" firstAttribute="leading" secondItem="h2N-7X-yep" secondAttribute="leading" constant="71" id="2ml-I7-mBp"/>
                             <constraint firstItem="DUg-9B-BrV" firstAttribute="leading" secondItem="h2N-7X-yep" secondAttribute="leading" constant="52" id="3Jn-la-PvI"/>
-                            <constraint firstItem="h2N-7X-yep" firstAttribute="trailing" secondItem="qFE-yy-VzA" secondAttribute="trailing" constant="113" id="Dpl-8k-j34"/>
+                            <constraint firstItem="h2N-7X-yep" firstAttribute="trailing" secondItem="qFE-yy-VzA" secondAttribute="trailing" constant="123" id="Dpl-8k-j34"/>
                             <constraint firstItem="h2N-7X-yep" firstAttribute="bottom" secondItem="xIH-5U-V2x" secondAttribute="bottom" constant="662" id="IOQ-4A-ak7"/>
                             <constraint firstItem="h2N-7X-yep" firstAttribute="trailing" secondItem="DUg-9B-BrV" secondAttribute="trailing" constant="69" id="PAx-mK-ITs"/>
                             <constraint firstItem="h2N-7X-yep" firstAttribute="trailing" secondItem="xIH-5U-V2x" secondAttribute="trailing" constant="97.333333333333485" id="Rji-6U-nJh"/>
                             <constraint firstItem="h2N-7X-yep" firstAttribute="bottom" secondItem="vyi-fy-pct" secondAttribute="bottom" constant="57" id="Tw9-V5-zAs"/>
                             <constraint firstItem="5oX-hu-Pvu" firstAttribute="leading" secondItem="vyi-fy-pct" secondAttribute="leading" constant="-24" id="VSL-8O-bX2"/>
                             <constraint firstItem="qFE-yy-VzA" firstAttribute="top" secondItem="4Vz-yH-9wl" secondAttribute="bottom" constant="86" id="Zwt-66-Im2"/>
-                            <constraint firstItem="4Vz-yH-9wl" firstAttribute="top" secondItem="DUg-9B-BrV" secondAttribute="bottom" constant="-412" id="bAm-ZI-zE2"/>
+                            <constraint firstItem="4Vz-yH-9wl" firstAttribute="top" secondItem="DUg-9B-BrV" secondAttribute="bottom" constant="-435" id="bAm-ZI-zE2"/>
                             <constraint firstItem="4Vz-yH-9wl" firstAttribute="top" secondItem="h2N-7X-yep" secondAttribute="top" constant="118" id="bCu-ks-eGh"/>
-                            <constraint firstItem="qFE-yy-VzA" firstAttribute="leading" secondItem="5oX-hu-Pvu" secondAttribute="trailing" constant="-37" id="dEw-M2-OgF"/>
+                            <constraint firstItem="qFE-yy-VzA" firstAttribute="leading" secondItem="5oX-hu-Pvu" secondAttribute="trailing" constant="-47" id="dEw-M2-OgF"/>
                             <constraint firstItem="h2N-7X-yep" firstAttribute="trailing" secondItem="4Vz-yH-9wl" secondAttribute="trailing" constant="36" id="fWY-pe-52P"/>
-                            <constraint firstItem="qFE-yy-VzA" firstAttribute="leading" secondItem="h2N-7X-yep" secondAttribute="leading" constant="244" id="hKv-7N-QZF"/>
+                            <constraint firstItem="qFE-yy-VzA" firstAttribute="leading" secondItem="h2N-7X-yep" secondAttribute="leading" constant="234" id="hKv-7N-QZF"/>
                             <constraint firstItem="xIH-5U-V2x" firstAttribute="leading" secondItem="h2N-7X-yep" secondAttribute="leading" constant="97" id="haR-F8-XVV"/>
                             <constraint firstItem="5oX-hu-Pvu" firstAttribute="top" secondItem="4Vz-yH-9wl" secondAttribute="bottom" constant="80" id="n53-CM-fmu"/>
                             <constraint firstItem="vyi-fy-pct" firstAttribute="top" secondItem="h2N-7X-yep" secondAttribute="top" constant="623" id="ovz-IB-s3f"/>
@@ -1000,24 +1000,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGS-W7-8wO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1316.793893129771" y="429.57746478873241"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kvj-f7-eX8">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GG0-ua-7Pu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7RE-ha-2Ka" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="THp-FK-9jp">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vOE-R8-B51" kind="relationship" relationship="rootViewController" id="CCX-E4-Sib"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-3387.0229007633588" y="-82.394366197183103"/>
         </scene>
     </scenes>
     <resources>

@@ -20,15 +20,14 @@ class ProductTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAPI()
-        
+
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchAPI()
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        fetchAPI()
-        
+ 
     }
     func fetchAPI()
     {
