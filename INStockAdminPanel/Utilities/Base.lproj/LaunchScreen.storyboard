@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Maker_com.ist.logomaker_Mon_Mar_13_01_10_32_GMT_02_00_2023_1678662632971" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-ID-Xhj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2023-03-25 at 2.29.45 AM" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-ID-Xhj">
                                 <rect key="frame" x="36" y="224" width="321" height="404"/>
                             </imageView>
                         </subviews>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo_Maker_com.ist.logomaker_Mon_Mar_13_01_10_32_GMT_02_00_2023_1678662632971" width="4000" height="4000"/>
+        <image name="WhatsApp Image 2023-03-25 at 2.29.45 AM" width="1280" height="1280"/>
     </resources>
 </document>

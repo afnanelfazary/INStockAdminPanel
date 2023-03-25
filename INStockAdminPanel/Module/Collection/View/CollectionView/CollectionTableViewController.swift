@@ -11,10 +11,6 @@ import Apollo
 
 class CollectionTableViewController: UITableViewController{
     
-    
-    
-    
-    
     //view Model
     var collectionViewModel : CollectionViewModel = CollectionViewModel()
     var collectionDetailsViewModel: CollectionDetailsViewModel  = CollectionDetailsViewModel()
@@ -23,43 +19,33 @@ class CollectionTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  fetchAPI()
-        // tableView.reloadData()
-        //  collectionDetailsViewModel.deleteCollection(collectionId: "437836251413" )
-        collectionViewModel.bindResultToHomeView = {[weak self] in
+        collectionViewModel.getBrands()
+         collectionViewModel.bindResultToHomeView = {[weak self] in
             DispatchQueue.main.async{
                 self?.renderBrandCollection()
             }
         }
-        collectionViewModel.getBrands()
-        
+ 
         
     }
     
     func renderBrandCollection() {
         self.tableView.reloadData()
     }
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        tableView.reloadData()
-    //
-    //    }
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        tableView.reloadData()
-    //
-    //    }
-    //    func fetchAPI()
-    //    {
-    //        collectionViewModel.delegate = self
-    //        collectionViewModel.fetchSmartCollection()
-    //    }
-    //
+        override func viewWillAppear(_ animated: Bool) {
+            collectionViewModel.getBrands()
+             collectionViewModel.bindResultToHomeView = {[weak self] in
+                DispatchQueue.main.async{
+                    self?.renderBrandCollection()
+                }
+            }
+            
+        }
+    
     @IBAction func AddNewCollectionBtn(_ sender: Any) {
         let collectionDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "CollectionDetailsViewController") as! CollectionDetailsViewController
         //Flag operation is Add
         collectionDetailsVC.flagOperation = "Add"
-        //   productDetails.productNameTF.text = ""
-        //  productDetails.productPriceTF.text = ""
-        // productDetails.productDescriptionTF.text = ""
         self.navigationController?.pushViewController(collectionDetailsVC, animated: true)
     }
     

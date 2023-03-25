@@ -15,7 +15,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var brandBtn: UIButton!
     @IBOutlet weak var productNameTF: UITextField!
     @IBOutlet weak var productPriceTF: UITextField!
-    @IBOutlet weak var productDescriptionTF: UITextField!
+    @IBOutlet weak var productDescriptionTF: UITextView!
     
     @IBOutlet weak var productTypeSegmented: UISegmentedControl!
     
@@ -201,6 +201,9 @@ class ProductDetailsViewController: UIViewController {
               }),
             UIAction(title: "Supreme",handler: { [weak self] action in
                 self?.productBrandStr = "Supreme"
+              }),
+            UIAction(title: "H&M",handler: { [weak self] action in
+                self?.productBrandStr = "H&M"
               })
         ])
         

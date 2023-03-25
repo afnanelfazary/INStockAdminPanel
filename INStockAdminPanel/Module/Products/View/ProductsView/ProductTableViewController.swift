@@ -20,11 +20,11 @@ class ProductTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAPI()
-
+        tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchAPI()
-        
+        tableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
  
@@ -60,7 +60,7 @@ class ProductTableViewController: UITableViewController
         cell.productName.text = ProductViewModel.productsList.first?.edges[indexPath.row].node.title
         
         cell.productTypeLabel.text = ProductViewModel.productsList.first?.edges[indexPath.row].node.productType
-        cell.productPriceLabel.text = ProductViewModel.productsList.first?.edges[indexPath.row].node.variants.edges.first?.node.price
+        cell.productPriceLabel.text = (ProductViewModel.productsList.first?.edges[indexPath.row].node.variants.edges.first?.node.price)! + " EGP"
         let productImageUrl = URL( string: ProductViewModel.imagesList.first?.edges[indexPath.row].node.images.edges[0].node.src ??  "1")
         let processor = RoundCornerImageProcessor(cornerRadius: 20)
         if (productImageUrl != nil)
